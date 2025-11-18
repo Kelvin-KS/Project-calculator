@@ -1,20 +1,16 @@
 * {
   box-sizing: border-box;
-  font-family: poppins;
-  /* outline: 0.25px solid black; */
+  font-family: Poppins, sans-serif;
   user-select: none;
 }
 
 body {
-  background: rgb(255, 177, 252);
-  background: linear-gradient(
-    45deg,
-    rgba(255, 177, 252, 1) 0%,
-    rgba(204, 65, 255, 1) 100%
-  );
-
-  height: 100vh; /* Full viewport height */
+  background: linear-gradient(45deg, rgba(255, 177, 252, 1) 0%, rgba(204, 65, 255, 1) 100%);
+  height: 100vh;
   min-width: 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bg {
@@ -24,86 +20,101 @@ body {
 
 .calcArea {
   background-color: white;
-  margin-top: 60px;
-  width: 300px;
-  height: 500px;
+  width: 320px;
+  height: 520px;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   border-radius: 22px;
+  padding-top: 20px;
 }
 
 .heroText {
-  padding: 30px 0px;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   gap: 10px;
+  margin-bottom: 10px;
 }
-img {
+
+.heroText img {
   width: 20px;
 }
+
 .display {
-  width: 80%;
+  width: 90%;
   height: 100px;
   border-radius: 15px;
-  align-content: center;
   text-align: right;
   padding: 15px;
   font-size: 25px;
   font-weight: 700;
   color: #6d6d6f;
   background-color: #f9fafc;
+  overflow-x: auto; /* scrollable */
+  white-space: nowrap;
 }
 
 .inputs {
   display: flex;
-  width: 80%;
-  padding-top: 50px;
+  width: 90%;
+  margin-top: 30px;
   gap: 5px;
 }
 
 .leftArea {
-  width: 80%;
+  width: 70%;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 5px;
 }
 
 .leftArea div {
-  background-color: #edf0f5;
-  margin: 0px 10px 0px 0px;
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  align-content: center;
   text-align: center;
+  line-height: 50px;
+  background-color: #edf0f5;
   cursor: pointer;
 }
-#delete {
-  color: #cf3b8f;
-  background-color: #ffcfea;
-  font-size: 13px;
+
+/* DEL button — red */
+.leftArea .del {
+  background-color: #ff4d4f;
+  color: white;
 }
 
+/* Backspace button (C) — blue */
+.leftArea .backspace {
+  background-color: #1890ff;
+  color: white;
+}
+
+/* Right area operators */
 .rightArea {
-  width: 20%;
+  width: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  background-color: #edf0f5;
-  border-radius: 12px;
+  gap: 5px;
 }
 
 .rightArea div {
-  align-content: center;
-  text-align: center;
-  /* width: 50px; */
   height: 50px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #edf0f5;
   cursor: pointer;
 }
 
-.equalTo {
+/* Equals button — light blue */
+.rightArea .equalTo {
   background-color: #89d9ff;
-  border-radius: 10px;
+  color: white;
+}
+
+/* Optional hover effect for interactive feel */
+.leftArea div:hover,
+.rightArea div:hover {
+  opacity: 0.8;
 }
